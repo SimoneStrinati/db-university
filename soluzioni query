@@ -24,7 +24,7 @@ WHERE TIMESTAMPDIFF(YEAR, date_of_birth, NOW()) > 30;
 
 4. SELECT *
 FROM courses
-WHERE period = "I semestre" AND year = "1";
+WHERE period = "I semestre" AND year = 1;
 
 5. SELECT *
 FROM exams
@@ -33,7 +33,7 @@ AND hour > '14:00:00';
 
 6. SELECT *
 FROM degrees
-WHERE level LIKE "%magistrale%";
+WHERE level = "magistrale";
 
 7. SELECT COUNT(*) AS dipartimenti
 FROM departments;
