@@ -1,0 +1,46 @@
+1.  SELECT students.id, degree_id, students.name, surname, enrolment_date, degrees.name
+    FROM university.students
+    JOIN degrees
+    ON students.degree_id = degrees.name LIKE 'Corso di laurea in economia';
+
+    //OPPURE//
+
+    SELECT students.id, degree_id, students.name, surname, enrolment_date, degrees.name
+    FROM university.students
+    JOIN degrees
+    ON students.degree_id = degrees.id LIKE 53;
+
+2.  SELECT degrees.id, degrees.name AS Corso, departments.name AS Dipartimento, level
+    FROM university.degrees
+    JOIN departments
+    ON degrees.department_id = departments.id
+    WHERE departments.name = 'Dipartimento di Neuroscienze'
+    AND degrees.level = 'magistrale';
+
+3.  SELECT courses.id, courses.name AS Corsi, teachers.name, teachers.surname
+    FROM courses
+
+    JOIN course_teacher
+    ON courses.id = course_teacher.course_id
+
+    JOIN teachers
+    ON teachers.id = course_teacher.teacher_id
+
+    WHERE course_teacher.teacher_id = 44;
+
+4.  SELECT students.name, students.surname, degrees.name AS Corso_di_Laurea, level, departments.name AS Dipartimento
+    FROM students
+
+    JOIN degrees
+    ON students.degree_id = degrees.id
+
+    JOIN departments
+    ON degrees.department_id = departments.id
+
+    ORDER BY students.surname, students.name;
+
+5. 
+
+6.
+
+7.
