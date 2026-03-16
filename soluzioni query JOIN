@@ -39,8 +39,38 @@
 
     ORDER BY students.surname, students.name;
 
-5. 
+5. SELECT degrees.id, degrees.name, courses.name, teachers.name, teachers.surname
+    FROM university.degrees
 
-6.
+    JOIN courses
+    ON courses.degree_id = degrees.id
+
+    JOIN course_teacher
+    ON courses.id = course_teacher.course_id
+
+    JOIN teachers
+    ON course_teacher.teacher_id = teachers.id
+
+    ORDER BY degrees.id;
+
+6. SELECT DISTINCT
+    degrees.name AS Corso, courses.name,
+    teachers.name AS nome_insegnante, teachers.surname AS cognome_insegnante
+ 
+    FROM university.departments
+
+    JOIN degrees
+    ON departments.id = degrees.department_id
+
+    JOIN courses
+    ON courses.degree_id = degrees.id
+
+    JOIN course_teacher
+    ON courses.id = course_teacher.course_id
+
+    JOIN teachers
+    ON course_teacher.teacher_id = teachers.id
+
+    WHERE departments.name LIKE 'Dipartimento di Matematica'
 
 7.
